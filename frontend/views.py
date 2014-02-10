@@ -21,7 +21,7 @@ def inicio(request):
 	return TemplateResponse(request, 'home.html', {'slider_principal': slider_principal})
 
 def blog(request):
-	return redirect(settings.DOMINIO+"blog/")
+	return redirect(settings.DOMINIO_BLOG)
 
 def about(request):
 	return TemplateResponse(request, 'about.html')
