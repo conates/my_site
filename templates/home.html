@@ -1,10 +1,14 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% load set_var %}
-{% block title %}Inicio{% endblock %}
+{% block title %}
+	{% for post in post_home %}
+		{% autoescape off %}{{ post.post_title }}{% endautoescape %}
+	{% endfor %}
+{% endblock %}
 
 {% block cabecera %}
-		<script src={% static "js/modernizr.custom.79639.js" %}></script>
+
 
 {% endblock %}
 
@@ -17,20 +21,5 @@
 		{% autoescape off %}{{ post.post_content }}{% endautoescape %}
 		
 	{% endfor %}
-<!--
-<div itemscope itemtype="http://data-vocabulary.org/Person">
-   Mi nombre es <span itemprop="name">Claudio Oñate Salgado</span>, pero me llaman <span itemprop="nickname">Conates</span>.
-   Esta es mi página principal: <a href="http://www.conates.cl" itemprop="url">http://www.conates.cl</a>.
-   
-   Vivo en 
-   <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
-      <span itemprop="locality">Santiago</span> 
-      <span itemprop="region">Chile</span> 
-   </span>
-   y trabajo de <span itemprop="title">Desarrollador Web</span> en <span itemprop="affiliation">RepriseMedia Chile</span>, Mi pasiones son desarrollar <div itemprop="jobtitle">Frontend and Backend Django Web Developer</div>. En lo Personal soy <div itemprop="description">Especialista en desarrollo Web utilizando Framework Django para soluciones TI, en paralelo, desarrollo sitios para clientes en menor escala utilizando Wordpress</div>.
-   Para contactarse conmigo lo pueden hacer enviando un correo a <a href="mailto" itemprop="email">conates.ktn@gmail.com</a>, llamando al teléfono <div itemprop="telephone">(+569) 75685200 o llenando el formulario de <a href="#contacto" rel="tag">contacto</a></div>, Me comunicare lo más pronto posible
-</div>
-
-  -->
 
 {% endblock %}

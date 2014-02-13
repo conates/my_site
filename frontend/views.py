@@ -23,7 +23,14 @@ def blog(request):
 	return redirect(settings.DOMINIO_BLOG)
 
 def about(request):
-	return TemplateResponse(request, 'about.html')
+	post_about = WpPosts.objects.all().filter(
+			post_status="publish",
+			post_type="post",
+			wptermrelationships__term_taxonomy__term__name="About",
+			)
+	post_about.order_by("wppostmeta__meta_value")
+
+	return TemplateResponse(request, 'about.html',{'post_about':post_about})
 
 def contacto(request):
 	return TemplateResponse(request, 'contacto.html')

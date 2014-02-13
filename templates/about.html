@@ -1,7 +1,25 @@
 {% extends "base.html" %}
 
-{% block title %}ssss{% endblock %}
+{% block title %}
+	{% for post in post_about %}
+		{% autoescape off %}{{ post.post_title }}{% endautoescape %}
+	{% endfor %}
+{% endblock %}
+
+
+{% block cabecera %}
+		
+
+{% endblock %}
+
+
+
 
 {% block content %}
-About
+	{% for post in post_about %}
+		<h2>{% autoescape off %}{{ post.post_title }}{% endautoescape %}</h2>
+		{% autoescape off %}{{ post.post_content }}{% endautoescape %}
+		
+	{% endfor %}
+
 {% endblock %}
