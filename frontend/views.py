@@ -19,8 +19,13 @@ def inicio(request):
 
 	return TemplateResponse(request, 'home.html', {'post_home': post_home})
 
+
+
 def blog(request):
 	return redirect(settings.DOMINIO_BLOG)
+
+
+
 
 def about(request):
 	post_about = WpPosts.objects.all().filter(
@@ -32,11 +37,27 @@ def about(request):
 
 	return TemplateResponse(request, 'about.html',{'post_about':post_about})
 
+
+
+
+def habilidades(request):
+	post_skill = WpPosts.objects.all().filter(
+			post_status="publish",
+			post_type="post",
+			wptermrelationships__term_taxonomy__term__name="Skill",
+			)
+	post_skill.order_by("wppostmeta__meta_value")
+	
+	return TemplateResponse(request, 'habilidades.html',{'post_skill':post_skill})
+
+
+
 def contacto(request):
 	return TemplateResponse(request, 'contacto.html')
 
-def habilidades(request):
-	return TemplateResponse(request, 'habilidades.html')
+
+
+
 
 def portafolio(request):
 	return TemplateResponse(request, 'portafolio.html')

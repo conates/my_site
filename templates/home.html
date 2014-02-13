@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-{% load set_var %}
+
 {% block title %}
 	{% for post in post_home %}
 		{% autoescape off %}{{ post.post_title }}{% endautoescape %}
@@ -17,9 +17,16 @@
 
 					
 	{% for post in post_home %}
-		<h2>{% autoescape off %}{{ post.post_title }}{% endautoescape %}</h2>
-		{% autoescape off %}{{ post.post_content }}{% endautoescape %}
-		
+	<div id="home">
+		<header class="page-header">
+			<h1>{% autoescape off %}{{ post.post_title }}{% endautoescape %}</h1>
+		</header>
+		<section>
+			<article>
+				{% autoescape off %}{{ post.post_content }}{% endautoescape %}
+			</article>
+		</section>
+	</div>
 	{% endfor %}
 
 {% endblock %}

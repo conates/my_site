@@ -1,0 +1,24 @@
+@import "/static/css/libs/normalize.css";
+@import "/static/css/libs/menu/icons.css";
+@import "/static/css/libs/menu/menu.css";
+img.typekit-badge{display:none !important}
+nav.bt-menu .bt-menu-trigger span{background-color:#34495e}
+nav.bt-menu .bt-menu-trigger span:before{transform:translateY(-250%);background-color:#34495e}
+nav.bt-menu .bt-menu-trigger span:after{transform:translateY(250%);background-color:#34495e}
+nav.bt-menu .bt-menu-trigger:hover span{background-color:#c0392b}
+nav.bt-menu .bt-menu-trigger:hover span:before{background-color:#c0392b}
+nav.bt-menu .bt-menu-trigger:hover span:after{background-color:#c0392b}
+nav.bt-menu-open{border-width:0 0 50px 180px !important;}
+nav.bt-menu-open .bt-menu-trigger span{transform:translateY(0) rotate(-90deg) !important;background-color:transparent}
+nav.bt-menu-open .bt-menu-trigger span:before{transform:translateY(0) rotate(-45deg) !important;background-color:#3498db !important}
+nav.bt-menu-open .bt-menu-trigger span:after{transform:translateY(0) rotate(45deg) !important;background-color:#3498db !important}
+nav.bt-menu-open .bt-menu-trigger:hover span:before,nav.bt-menu-open .bt-menu-trigger:hover span:after{background-color:#c0392b !important}
+nav.bt-menu-open .bt-menu-trigger:hover span{background-color:transparent !important}
+h1,h2{font-family:"penna-connected-swashes",sans-serif;margin:0 auto;text-align:center;text-shadow:0 2px 3px #555}
+h1{font-size:5em;color:#34495e}
+#about section article{text-align:center;width:80%;margin:0 auto;}
+#about section article figure{display:inline-block;vertical-align:top;width:40%;max-width:360px;min-width:150px;margin:0 40px;}
+#about section article figure .img-circle{box-shadow:0 0 58px #3498db inset;display:block;padding:10px;text-align:center;width:100%}
+#about section article #about_me{display:inline-block;font-family:"calluna-sans",sans-serif;font-size:1.4em;line-height:45px;text-align:left;text-shadow:0 0 1px #555;vertical-align:top;width:60%;}
+#about section article #about_me div,#about section article #about_me span{display:inline}
+#about section article #about_me span{font-weight:bold}

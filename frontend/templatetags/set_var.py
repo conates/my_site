@@ -11,11 +11,12 @@ slider_principal.filter(wppostmeta__meta_key__in=["data-icon","data-slice2-scale
 slider_principal.order_by("wppostmeta__meta_value")
 
 
-# @register.simple_tag
-# def get_custom_var_orientation(postId):
-# 	var_custom = WpPostmeta.objects.filter(post_id=postId)[2:3]
-# 	for value in var_custom:
-# 		return value.meta_value
+@register.simple_tag
+def get_mi_picture(postId):
+	var_custom = WpPostmeta.objects.filter(post_id=postId)[1:2]
+	for value in var_custom:
+		print value.meta_key
+ 		return value.meta_value
 
 # @register.simple_tag
 # def get_custom_var_rotation_1(postId):

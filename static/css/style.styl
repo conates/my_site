@@ -1,0 +1,98 @@
+@import "/static/css/libs/normalize.css"
+@import "/static/css/libs/menu/icons.css"
+@import "/static/css/libs/menu/menu.css"
+
+
+
+img.typekit-badge
+	display none !important
+
+
+nav.bt-menu
+
+	.bt-menu-trigger
+		span
+			background-color #34495E
+		span:before
+			transform: translateY(-250%)
+			background-color #34495E
+		span:after
+			transform: translateY(250%)
+			background-color #34495E
+	.bt-menu-trigger:hover
+		span
+			background-color #C0392B
+		span:before
+			background-color #C0392B
+		span:after
+			background-color #C0392B
+
+nav.bt-menu-open
+	border-width 0 0 50px 180px !important
+
+	.bt-menu-trigger 
+
+		span
+			transform: translateY(0px) rotate(-90deg) !important
+			background-color transparent
+
+		span:before
+			transform: translateY(0) rotate(-45deg) !important
+			background-color #3498DB !important
+		span:after
+			transform: translateY(0) rotate(45deg) !important
+			background-color #3498DB !important
+
+	.bt-menu-trigger:hover
+		span:before, span:after
+			background-color #C0392B !important
+		span
+			background-color transparent !important
+		
+
+
+
+h1, h2
+	font-family: "penna-connected-swashes",sans-serif
+	margin 0 auto
+	text-align center
+	text-shadow: 0 2px 3px #555555
+h1
+	font-size 5em
+	color #34495E
+
+#about
+	section
+		article
+			text-align center
+			width 80%
+			margin 0 auto
+
+			figure
+				display: inline-block
+				vertical-align: top
+				width 40%
+				max-width 360px
+				min-width 150px
+				margin 0px 40px
+
+				.img-circle
+					box-shadow: 0 0 58px #3498DB inset
+					display: block
+					padding: 10px
+					text-align: center
+					width: 100%
+	
+			#about_me
+				display: inline-block;
+				font-family: "calluna-sans",sans-serif;
+				font-size: 1.4em;
+				line-height: 45px;
+				text-align: left;
+				text-shadow: 0 0 1px #555555;
+				vertical-align: top;
+				width: 60%;
+				div, span
+					display inline					
+				span
+					font-weight bold
