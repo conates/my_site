@@ -10,15 +10,14 @@ from django.conf import settings
 # Create your views here.
 def inicio(request):
 
-	slider_principal = WpPosts.objects.all().filter(
+	post_home = WpPosts.objects.all().filter(
 			post_status="publish",
 			post_type="post",
-			wptermrelationships__term_taxonomy__term__name="Slider Principal",
+			wptermrelationships__term_taxonomy__term__name="Home",
 			)
-	slider_principal.filter(wppostmeta__meta_key__in=["data-icon","data-slice2-scale","data-slice1-scale","data-slice2-rotation","data-slice1-rotation",])
-	slider_principal.order_by("wppostmeta__meta_value")
+	post_home.order_by("wppostmeta__meta_value")
 
-	return TemplateResponse(request, 'home.html', {'slider_principal': slider_principal})
+	return TemplateResponse(request, 'home.html', {'post_home': post_home})
 
 def blog(request):
 	return redirect(settings.DOMINIO_BLOG)
@@ -31,3 +30,6 @@ def contacto(request):
 
 def habilidades(request):
 	return TemplateResponse(request, 'habilidades.html')
+
+def portafolio(request):
+	return TemplateResponse(request, 'portafolio.html')

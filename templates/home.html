@@ -4,72 +4,20 @@
 {% block title %}Inicio{% endblock %}
 
 {% block cabecera %}
-		<link rel="stylesheet" href={% static "css/demo.css" %}>
-		<link rel="stylesheet" href={% static "css/style.css" %}>
-		<link rel="stylesheet" href={% static "css/custom.css" %}>
-		<link rel="stylesheet" href={% static "css/menu.css"%}>
 		<script src={% static "js/modernizr.custom.79639.js" %}></script>
-		<noscript>
-			<link rel="stylesheet" href={% static "css/styleNoJS.css" %}>
-		</noscript>
 
-		<script src={% static "js/jquery.ba-cond.min.js" %}></script>
-		<script src={% static "js/jquery.slitslider.js" %}></script>
-		<script src={% static "js/modulos/home.js" %}></script>
 {% endblock %}
 
 {% block content %}
 
-<!--
-<div class="wrapper">
-  <div class="main">
-	<a href="#wheel3" class="wheel-button nw">
-		<span><i class="fa fa-bullseye"></i></span>
-	</a>
-	<ul id="wheel3" data-angle="SW" class="wheel">
-		<li class="item"><a href="#home">A</a></li>
-		<li class="item"><a href="#home">B</a></li>
-		<li class="item"><a href="#home">C</a>	</li>
-		<li class="item"><a href="#home">D</a></li>
-	</ul>
-</div>
-</div>
 
-   Cierra Menu-->
-  <!-- Slider-->
-		<div class="container demo-1">
-			<div id="slider" class="sl-slider-wrapper">
-
-				<div class="sl-slider">
 					
-					{% for slider in slider_principal %}
-						<div class="sl-slide {% get_custom_var_class slider.id %}" data-orientation="{% get_custom_var_orientation slider.id %}" data-slice1-rotation="{% get_custom_var_rotation_1 slider.id %}" data-slice2-rotation="{% get_custom_var_rotation_2 slider.id %}" data-slice1-scale="{% get_custom_var_scale_1 slider.id %}" data-slice2-scale="{% get_custom_var_scale_2 slider.id %}">
-							<div class="sl-slide-inner">
-								<div class="desc{% get_custom_var_class slider.id %} deco description"></div>
-								<div class="info{% get_custom_var_class slider.id %} info">{{ slider.post_excerpt }}</div>
-								<div class="deco" data-icon="{% get_custom_var_icon slider.id %}"></div>
-								<h2>{% autoescape off %}{{ slider.post_title }}{% endautoescape %}</h2>
-								{% autoescape off %}{{ slider.post_content }}{% endautoescape %}
-							</div>
-						</div>			
-					{% endfor %}
-
-				</div><!-- /sl-slider -->
-				
-				<nav id="nav-arrows" class="nav-arrows">
-					<span class="nav-arrow-prev">Previous</span>
-					<span class="nav-arrow-next">Next</span>
-				</nav>
-
-				<nav id="nav-dots" class="nav-dots">
-					{% for slider in slider_principal %}
-						<span class="nav-dot-current"></span>
-					{% endfor %}
-				</nav>
-
-			</div><!-- /slider-wrapper -->
-
-		</div>
+	{% for post in post_home %}
+		<h2>{% autoescape off %}{{ post.post_title }}{% endautoescape %}</h2>
+		{% autoescape off %}{{ post.post_content }}{% endautoescape %}
+		
+	{% endfor %}
+<!--
 <div itemscope itemtype="http://data-vocabulary.org/Person">
    Mi nombre es <span itemprop="name">Claudio Oñate Salgado</span>, pero me llaman <span itemprop="nickname">Conates</span>.
    Esta es mi página principal: <a href="http://www.conates.cl" itemprop="url">http://www.conates.cl</a>.
@@ -83,6 +31,6 @@
    Para contactarse conmigo lo pueden hacer enviando un correo a <a href="mailto" itemprop="email">conates.ktn@gmail.com</a>, llamando al teléfono <div itemprop="telephone">(+569) 75685200 o llenando el formulario de <a href="#contacto" rel="tag">contacto</a></div>, Me comunicare lo más pronto posible
 </div>
 
-  <!-- Cierra Slider-->
+  -->
 
 {% endblock %}

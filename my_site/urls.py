@@ -11,5 +11,6 @@ urlpatterns = patterns('',
     url(r'^acerca-de/', 'frontend.views.about', name='about'),
     url(r'^contacto/', 'frontend.views.contacto', name='contacto'),
     url(r'^habilidades/', 'frontend.views.habilidades', name='habilidades'),
+    url(r'^portafolio/', 'frontend.views.portafolio', name='portafolio'),
     url(r'^admin/', include(admin.site.urls)),
 )
