@@ -1,9 +1,10 @@
 @import "/static/css/libs/normalize.css"
 @import "/static/css/libs/menu/icons.css"
 @import "/static/css/libs/menu/menu.css"
+@import url("http://fonts.googleapis.com/css?family=Poller+One|PT+Serif+Caption")
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css")
 
-
-
+movimiento = all ease-in 0.3s
 img.typekit-badge
 	display none !important
 
@@ -48,51 +49,136 @@ nav.bt-menu-open
 			background-color #C0392B !important
 		span
 			background-color transparent !important
-		
 
-
+.container
+	@media screen and (max-width:500px)
+		padding 10%;
 
 h1, h2
-	font-family: "penna-connected-swashes",sans-serif
+	font-family: 'Poller One', cursive
 	margin 0 auto
 	text-align center
-	text-shadow: 0 2px 3px #555555
+	text-transform: uppercase
+	@media screen and (max-width:500px)
+		font-size 2em !important;
 h1
-	font-size 5em
+	font-size 4em
 	color #34495E
+	padding: 70px 0
+	transition movimiento
 
-#about
+header
+	@media screen and (max-width:1280px)
+		position absolute
+
+	@media screen and (max-width:800px)
+		position relative
+		width 100% !important
+
+		h1
+			text-align center !important
+			color #3498db !important
+
+
+
+section
+	article
+		text-align center
+		width 80%
+		margin 0 auto
+		font-family: 'PT Serif Caption', serif
+
+
+
+#home
+	header
+		@media screen and (max-width:1280px)
+			position relative 
+		@media screen and (max-width:800px)
+			position relative  
+
 	section
 		article
-			text-align center
-			width 80%
-			margin 0 auto
+			p
+				font-size: 1.5em
+				margin: 5px 0
+				text-align: center
+				text-transform: uppercase
 
-			figure
-				display: inline-block
-				vertical-align: top
-				width 40%
-				max-width 360px
-				min-width 150px
-				margin 0px 40px
 
-				.img-circle
-					box-shadow: 0 0 58px #3498DB inset
-					display: block
-					padding: 10px
-					text-align: center
-					width: 100%
-	
+#about
+	header
+		display inline-block
+		vertical-align top
+		width 29%
+
+		h1
+			font-size: 300%
+			padding: 70px 0
+			text-align: left
+
+
+	section
+		display inline-block
+		vertical-align top
+		width 70%
+		@media screen and (max-width:1280px)
+			width 100%
+
+		article
+			width 100%
+
+			div.icon-male
+				display inline-block
+				vertical-align top
+				margin-right 10%
+				animation: rodar 2s;
+
+				@media screen and (max-width:1280px)
+					display: inline-block
+					float: right
+					text-align: right
+					vertical-align: top
+					width: auto
+
+				@media screen and (max-width:800px)
+					float: none
+				
+				i
+					color: #2ECC71
+					font-size: 30em
+					transition movimiento
+					@media screen and (max-width:800px)
+						font-size 19em
+						color #f39c12
+
+
 			#about_me
-				display: inline-block;
-				font-family: "calluna-sans",sans-serif;
-				font-size: 1.4em;
-				line-height: 45px;
-				text-align: left;
-				text-shadow: 0 0 1px #555555;
-				vertical-align: top;
-				width: 60%;
+				display: inline-block
+				font-size: 1.4em
+				line-height: 45px
+				text-align: left
+				vertical-align: top
+				width: 60%
+				transition movimiento
+
+				@media screen and (max-width:1280px)
+					width 100%
+
+
+				@media screen and (max-width:500px)
+					font-size: 1em
+					line-height 35px
+					width 100%
+
 				div, span
-					display inline					
+					display inline	
+
 				span
 					font-weight bold
+
+@keyframes rodar
+	from
+		transform rotate(0deg)  translate(200%)
+	to
+		transform rotate(-360deg) translate(0px)

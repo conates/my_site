@@ -22,12 +22,16 @@
 		<div id="about">
 			<header class="page-header">
 				<h1>{% autoescape off %}{{ post.post_title }}{% endautoescape %}</h1>
+
 			</header>
 			<section>
 				<article>
-					<figure>
+					<div class="icon-male">
+						<i class="fa fa-male"></i>
+					</div>
+					<!--<figure>
 						<img src="{% get_mi_picture post.id %}"  class="img-circle" >
-					</figure>
+					</figure>-->
 					<div id="about_me">
 						<div itemscope="" itemtype="http://data-vocabulary.org/Person">
 							{% autoescape off %}{{ post.post_content }}{% endautoescape %}
