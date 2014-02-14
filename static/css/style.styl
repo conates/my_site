@@ -10,7 +10,7 @@ img.typekit-badge
 
 
 nav.bt-menu
-
+	animation mov_de_izq 2s
 	.bt-menu-trigger
 		span
 			background-color #34495E
@@ -51,6 +51,8 @@ nav.bt-menu-open
 			background-color transparent !important
 
 .container
+	overflow hidden
+	height 100%
 	@media screen and (max-width:500px)
 		padding 10%;
 
@@ -65,7 +67,7 @@ h1
 	font-size 4em
 	color #34495E
 	padding: 70px 0
-	transition movimiento
+	animation mov_izq_der 2s
 
 header
 	@media screen and (max-width:1280px)
@@ -82,6 +84,7 @@ header
 
 
 section
+	animation mov_down_top 2s
 	article
 		text-align center
 		width 80%
@@ -132,7 +135,6 @@ section
 				display inline-block
 				vertical-align top
 				margin-right 10%
-				animation: rodar 2s;
 
 				@media screen and (max-width:1280px)
 					display: inline-block
@@ -177,8 +179,19 @@ section
 				span
 					font-weight bold
 
-@keyframes rodar
+
+@keyframes mov_de_izq
 	from
-		transform rotate(0deg)  translate(200%)
+		transform: translateX(1600px);
 	to
-		transform rotate(-360deg) translate(0px)
+		transform: translateX(0px);
+@keyframes mov_izq_der
+	from
+		transform: translateX(-500px);
+	to
+		transform: translateX(0px);
+@keyframes mov_down_top
+	from
+		transform: translate(4000px,4000px);
+	to
+		transform: translate(0px,0px);
